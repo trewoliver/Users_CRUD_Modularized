@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Users</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        .flex{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="flex">
+        <div class="h1 m-3">
+            <h1>User {{show_one.id}}</h1>
+        </div>
+        <a href="/"><button>Home</button></a>
+    </div>
+
+
+    <form action="/show_form" method="POST">
+
+
+        <table class="table mt-3">
+            <thead>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Created On</th>
+                <th>Last Updated On</th>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>{{show_one.first_name}} {{show_one.last_name}}</td>
+                    <td>{{show_one.email}}</td>
+                    <td>{{show_one.created_at}}</td>
+                    <td>{{show_one.updated_at}}</td>
+                </tr>
+                
+        </table>
+
+    </form>
+    
+    <a href="/edit/{{show_one.id}}">Edit</a> | <a href="/delete/{{show_one.id}}">Delete</a>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>
